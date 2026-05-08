@@ -1,0 +1,94 @@
+{
+  "expo": {
+    "name": "Calculator+",
+    "slug": "onspace-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/calculator-icon.png",
+    "scheme": "onspaceapp",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Calculator+ uses the microphone to record voice memos attached to your calculations.",
+        "NSLocationWhenInUseUsageDescription": "Calculator+ uses your location to tag saved calculations and shared exports with a geographic reference.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Calculator+ uses your location in the background to ensure location tags remain accurate even when the app is minimized.",
+        "NSContactsUsageDescription": "Calculator+ accesses your contacts so you can quickly send calculation results to saved people.",
+        "NSUserNotificationUsageDescription": "Calculator+ sends notifications when your calculation timers end or when a background session needs attention.",
+        "UIBackgroundModes": ["audio", "location", "fetch"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/calculator-icon.png",
+        "backgroundColor": "#0A0A0F"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.READ_CONTACTS",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+        "android.permission.INTERNET"
+      ],
+      "package": "com.ses.calculator"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/calculator-icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/calculator-icon.png",
+          "imageWidth": 160,
+          "resizeMode": "contain",
+          "backgroundColor": "#0A0A0F"
+        }
+      ],
+      "expo-web-browser",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Calculator+ uses your location to tag saved calculations and shared exports with a geographic reference.",
+          "locationAlwaysPermission": "Calculator+ uses your location in the background to ensure location tags remain accurate even when the app is minimized.",
+          "locationWhenInUsePermission": "Calculator+ uses your location to tag saved calculations and shared exports with a geographic reference.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Calculator+ uses the microphone to record voice memos attached to your calculations."
+        }
+      ],
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "Calculator+ accesses your contacts so you can quickly send calculation results to saved people."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/calculator-icon.png",
+          "color": "#0A0A0F",
+          "sounds": []
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
